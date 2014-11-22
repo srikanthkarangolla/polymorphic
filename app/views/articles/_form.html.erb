@@ -24,6 +24,11 @@
     <%= f.collection_select :article_type, Article::Types, :to_s, :to_s, :include_blank => true %>
   </div>
   <div class="field">
+    <%= f.label :birthday %><br />
+    <%= f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920 %>
+  </div>
+
+  <div class="field">
     <%= f.label :gender, "Male" %> <br />
     <%=  f.radio_button :gender, true %>  
   </div>
