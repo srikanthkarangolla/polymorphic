@@ -9,11 +9,18 @@ class CommentsController < ApplicationController
   	@comment = @commentable.comments.new
   end
 def create
-	@comment = @commentable.comments.new(params[:comment])
-	if @comment.save
-		redirect_to @commentable, notice: "Comment created!"
+	article_id = params[:article_id]
+	article_comment = Article.find(article_id).have_comments
+	if  article_comment	
+		@comment = @commentable.comments.new(params[:comment])
+		if @comment.save
+			redirect_to @commentable, notice: "Comment created!"
+		else
+			render :new
+		end
 	else
-		render :new
+
+		redirect_to @commentable, notice: "Comment not created!"
 	end
 end
   private

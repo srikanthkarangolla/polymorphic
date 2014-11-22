@@ -22,7 +22,10 @@
 
 <%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
+<% if @article.have_comments %>
 <h2>Comments</h2>
+
 
 <%= render "comments/comments" %>
 <%= render "comments/form" %>
+<% end %>

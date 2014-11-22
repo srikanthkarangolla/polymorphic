@@ -27,6 +27,9 @@
     <%= f.label :gender, "Female" %> <br />
     <%=  f.radio_button :gender, false %>  
   </div>
+  <div class="field">
+   <%= f.check_box :have_comments %><%= f.label :have_comments %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
