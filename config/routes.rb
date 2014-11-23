@@ -1,4 +1,6 @@
 Polymorphic::Application.routes.draw do
+  devise_for :users
+
   get "comments/index"
 
   get "comments/new"

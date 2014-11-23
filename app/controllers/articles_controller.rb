@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+
   # GET /articles
   # GET /articles.json
   def index
@@ -46,6 +47,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
+        ArticleMailer.article_mail(@article).deliver
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
         format.json { render json: @article, status: :created, location: @article }
       else
