@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :rows => 8 %>
   </div>
     <div class="field">
     <%= f.label :article_type %><br />
@@ -39,7 +39,7 @@
   <div class="field">
    <%= f.check_box :have_comments %><%= f.label :have_comments %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="actions ">
+    <%= f.submit "Submit", :class => 'btn btn-primary' %>
   </div>
 <% end %>

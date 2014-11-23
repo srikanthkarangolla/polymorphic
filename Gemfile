@@ -24,6 +24,11 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem "therubyracer"
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+gem 'autoprefixer-rails'
+
 group :development, :test do
   gem 'shoulda'
   gem 'ffaker'
